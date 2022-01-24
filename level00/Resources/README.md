@@ -10,13 +10,10 @@ level00 users
 
 And seek on common executable dir for level00 or flag00 rights:
 ```
-level00@SnowCrash:~$ ls -la $(sed 's/:/ /g' <<< "$PATH") | grep -e level00 -e flag00
-----r--r--  1 flag00  flag00      15 Mar  5  2016 john
-```
-Found it ! Just check where it is:
-```
-level00@SnowCrash:~$ find $(sed 's/:/\/john /g' <<< "$PATH")/john 2>/dev/null
+level00@SnowCrash:~$ find / -user level00 2>/dev/null | grep -v proc
+level00@SnowCrash:~$ find / -user flag00 2>/dev/null | grep -v proc
 /usr/sbin/john
+/rofs/usr/sbin/john
 ```
 
 Checking what's inside:
